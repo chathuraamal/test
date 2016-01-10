@@ -15,20 +15,20 @@ class employee_model extends CI_Model
     //get department table to populate the department name dropdown
     function get_department()     
     { 
-        $this->db->select('department_id');
-        $this->db->select('department_name');
-        $this->db->from('tbl_department');
+        $this->db->select('dept_id');
+        $this->db->select('dept_name');
+        $this->db->from('department');
         $query = $this->db->get();
         $result = $query->result();
 
         //array to store department id & department name
-        $dept_id = array('-SELECT-');
-        $dept_name = array('-SELECT-');
+        $dept_id = array();
+        $dept_name = array();
 
         for ($i = 0; $i < count($result); $i++)
         {
-            array_push($dept_id, $result[$i]->department_id);
-            array_push($dept_name, $result[$i]->department_name);
+            array_push($dept_id, $result[$i]->dept_id);
+            array_push($dept_name, $result[$i]->dept_name);
         }
         return $department_result = array_combine($dept_id, $dept_name);
     }
@@ -37,8 +37,8 @@ class employee_model extends CI_Model
     function get_designation()     
     { 
         $this->db->select('designation_id');
-        $this->db->select('designation_name');
-        $this->db->from('tbl_designation');
+        $this->db->select('designation');
+        $this->db->from('designation');
         $query = $this->db->get();
         $result = $query->result();
 
@@ -48,7 +48,7 @@ class employee_model extends CI_Model
         for ($i = 0; $i < count($result); $i++)
         {
             array_push($designation_id, $result[$i]->designation_id);
-            array_push($designation_name, $result[$i]->designation_name);
+            array_push($designation_name, $result[$i]->designation);
         }
         return $designation_result = array_combine($designation_id, $designation_name);
     }

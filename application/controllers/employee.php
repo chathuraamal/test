@@ -1,6 +1,17 @@
 <?php
 
 class Employee extends CI_Controller {
+ 
+    public function __construct()
+{
+    parent::__construct();
+    $this->load->library('session');
+    $this->load->helper('form');
+    $this->load->helper('url');    
+    //$this->load->library('form_validation');
+    //load the employee model
+    $this->load->model('employee_model');
+}
           
 
     public function index() {
@@ -57,15 +68,18 @@ class Employee extends CI_Controller {
         
         echo $this->table->generate($var1);
 
-    }
-    
-    
-
-    public function view_department() {
-        $this->load->view('employee/view_department.php');
-    }
+    } 
 
     public function add_employee() {
+         //set validation rules
+    $this->form_validation->set_rules('employeeno', 'Employee No', 'trim|required|numeric');
+    $this->form_validation->set_rules('employeename', 'Employee Name', 'trim|required|xss_clean|callback_alpha_only_space');
+    $this->form_validation->set_rules('department', 'Department', 'callback_combo_check');
+    $this->form_validation->set_rules('designation', 'Designation', 'callback_combo_check');
+    $this->form_validation->set_rules('hireddate', 'Hired Date', 'required');
+    $this->form_validation->set_rules('salary', 'Salary', 'required|numeric');
+        
+        
         $this->load->view('employee/add_employee.php');
     }
 
