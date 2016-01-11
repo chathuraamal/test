@@ -19,7 +19,7 @@ class Department extends CI_Controller
     }
     
 
-    //index function
+  
     function index()
     {   
         //fetch data from department and designation tables
@@ -91,6 +91,7 @@ class Department extends CI_Controller
         {
             return TRUE;
         }
-    }    
+    }  
+    
 }
 ?>

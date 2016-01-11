@@ -35,18 +35,18 @@
         <legend>Add Employee Details</legend>
         <?php 
         $attributes = array("class" => "form-horizontal", "id" => "employeeform", "name" => "employeeform");
-        echo form_open("employee/index", $attributes);?>
+        echo form_open("department/temp_post", $attributes);?>
         <fieldset>
             
             <div class="form-group">
             <div class="row colbox">
             
             <div class="col-lg-4 col-sm-4">
-                <label for="employeeno" class="control-label">Employee No</label>
+                <label for="epfno" class="control-label">Employee No</label>
             </div>
             <div class="col-lg-8 col-sm-8">
-                <input id="employeeno" name="employeeno" placeholder="employeeno" type="text" class="form-control"  value="<?php echo set_value('employeeno'); ?>" />
-                <span class="text-danger"><?php echo form_error('employeeno'); ?></span>
+                <input id="epfno" name="epfno" placeholder="epfno" type="text" class="form-control"  value="<?php echo set_value('epfno'); ?>" />
+                <span class="text-danger"><?php echo form_error('epfno'); ?></span>
             </div>
             </div>
             </div>
@@ -54,11 +54,61 @@
             <div class="form-group">
             <div class="row colbox">
             <div class="col-lg-4 col-sm-4">
-                <label for="employeename" class="control-label">Employee Name</label>
+                <label for="firstname" class="control-label">First Name</label>
             </div>
             <div class="col-lg-8 col-sm-8">
-                <input id="employeename" name="employeename" placeholder="employeename" type="text" class="form-control"  value="<?php echo set_value('employeename'); ?>" />
-                <span class="text-danger"><?php echo form_error('employeename'); ?></span>
+                <input id="fname" name="fname" placeholder="first name" type="text" class="form-control"  value="<?php echo set_value('fname'); ?>" />
+                <span class="text-danger"><?php echo form_error('fname'); ?></span>
+            </div>
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <div class="row colbox">
+            <div class="col-lg-4 col-sm-4">
+                <label for="lastname" class="control-label">Last Name</label>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <input id="lname" name="lname" placeholder="last name" type="text" class="form-control"  value="<?php echo set_value('lname'); ?>" />
+                <span class="text-danger"><?php echo form_error('lname'); ?></span>
+            </div>
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <div class="row colbox">
+            <div class="col-lg-4 col-sm-4">
+                <label for="DOB" class="control-label">Date of Birth</label>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <input id="dob" name="dob" placeholder="2000-01-01" type="text" class="form-control"  value="<?php echo set_value('dob'); ?>" />
+                <span class="text-danger"><?php echo form_error('dob'); ?></span>
+            </div>
+            </div>
+            </div>
+            
+            
+            <div class="form-group">
+            <div class="row colbox">
+            <div class="col-lg-4 col-sm-4">
+                <label for="address" class="control-label">Address</label>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <input id="address" name="address" placeholder="address" type="text" class="form-control"  value="<?php echo set_value('address'); ?>" />
+                <span class="text-danger"><?php echo form_error('address'); ?></span>
+            </div>
+            </div>
+            </div>
+            
+            
+            <div class="form-group">
+            <div class="row colbox">
+            <div class="col-lg-4 col-sm-4">
+                <label for="phone" class="control-label">Phone no</label>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <input id="phone" name="phone" placeholder="Phone no:" type="text" class="form-control"  value="<?php echo set_value('phone'); ?>" />
+                <span class="text-danger"><?php echo form_error('phone'); ?></span>
             </div>
             </div>
             </div>
@@ -106,7 +156,10 @@
             </div>
             </div>
             
-            <div class="form-group">
+            
+            
+            <!--salary is commented out for now..... might add it in later-->
+<!--            <div class="form-group">
             <div class="row colbox">
             <div class="col-lg-4 col-sm-4">
                 <label for="salary" class="control-label">Salary</label>
@@ -116,8 +169,11 @@
                 <span class="text-danger"><?php echo form_error('salary'); ?></span>
             </div>
             </div>
-            </div>
+            </div>-->
             
+
+
+
             <div class="form-group">
             <div class="col-sm-offset-4 col-lg-8 col-sm-8 text-left">
                 <input id="btn_add" name="btn_add" type="submit" class="btn btn-primary" value="Insert" />

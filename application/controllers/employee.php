@@ -39,6 +39,12 @@ class Employee extends CI_Controller {
         $this->load->view('employee/view_employee.php');
     }
     
+    public function temp_form(){
+        echo "test <br>";
+        var_dump($_POST);
+        
+    }
+    
     
     public function view_attendance() {
         // displays all the attendance info of employees
