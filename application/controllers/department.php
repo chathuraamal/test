@@ -41,7 +41,11 @@ class Department extends CI_Controller
         }
         else
         {    
-            //pass validation
+            //pass validation 
+            echo "from inside the input!!!";
+            echo "<pre>";
+            var_dump($_POST);
+            echo "<pre>";
             $data = array(
                 'epfno' => $this->input->post('epfno'),
                 'fname' => $this->input->post('fname'),
@@ -91,7 +95,35 @@ class Department extends CI_Controller
         {
             return TRUE;
         }
-    }  
+    } 
+    
+    public function temp_insert(){
+        
+         $data = array(
+                
+                'epfno' => $this->input->post('epfno'),
+                'fname' => $this->input->post('fname'),
+                'lname' => $this->input->post('lname'),
+                'dob' => $this->input->post('dob'),
+                'address' => $this->input->post('address'),
+                'phone' => $this->input->post('phone'),
+                'department' => $this->input->post('department'),
+                'designation' => $this->input->post('designation'),
+                'hired_date' => @date('Y-m-d', @strtotime($this->input->post('hireddate'))),
+                //'salary' => $this->input->post('salary'),
+            );
+
+            //insert the form data into database
+            $this->db->insert('employee', $data);
+
+            //display success message
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Employee details added to Database!!!</div>');
+            redirect('department');
+            
+            echo "data insert";
+        
+        
+    }
     
 }
 ?>

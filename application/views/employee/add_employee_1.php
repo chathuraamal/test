@@ -35,7 +35,7 @@
         <legend>Add Employee Details</legend>
         <?php 
         $attributes = array("class" => "form-horizontal", "id" => "employeeform", "name" => "employeeform");
-        echo form_open("department/temp_post", $attributes);?>
+        echo form_open("department/temp_insert", $attributes);?>
         <fieldset>
             
             <div class="form-group">
